@@ -1,3 +1,3 @@
-# bulletin-board-2
+# Bootstrapping Bulletin Board 1
 
-[Notes for this project are located here.](https://learn.firstdraft.com/lessons/137)
+[Notes for this project are located here.](https://learn.firstdraft.com/lessons/138)
