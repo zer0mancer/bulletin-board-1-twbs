@@ -1,41 +1,58 @@
-<div>
-  <div>
-    <h1>
-      All boards
-    </h1>
-  </div>
-</div>
+    <div class="container">
 
-<hr>
+   <div class="row">
+  <div class="offset-md-3 col-md-6">
+    <div class="card">
+      <div class="card-header d-flex align-items-center">
+        <h1 class="h6">All boards</h1>
 
-<div>
-  <div>
-    <h2>
-      Add a new board
-    </h2>
 
-    <form action="/insert_board" method="post">
-      <div>
-        <label for="name_box">
-          Name
-        </label>
-
-        <input type="text" id="name_box" name="query_name">
+<div class="modal fade" id="newBoardModal" tabindex="-1" aria-labelledby="newBoardModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="newBoardModalLabel">New board</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <div class="modal-body">
+        <form action="/insert_board" method="post">
+          <div class="mb-3">
+            <label for="name_box" class="form-label">
+              Name
+            </label>
 
-      <button>
-        Add board
-      </button>
-    </form>
+            <input type="text" id="name_box" name="query_name" class="form-control">
+          </div>
+
+          <div class="d-grid">
+            <button class="btn btn-success">
+              Add board
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <button type="button" class="ms-auto btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#newBoardModal">
+          Add a new board
+        </button>
+</div>
   </div>
 </div>
 
+    </div>
+
+
 <hr>
 
-<ul>
+<ul class="list-group list-group-flush" >
   <% @list_of_boards.each do |a_board| %>
-    <li>
-      <a href="/boards/<%= a_board.id %>">
+    <li class=" d-flex list-group-item list-group-item-action">
+      <a  href="/boards/<%= a_board.id %>">
         <%= a_board.name %>
       </a>
     </li>
